@@ -14,7 +14,7 @@ contract ComplexRewarderTime is IRewarder,  BoringOwnable{
     using BoringMath128 for uint128;
     using BoringERC20 for IERC20;
 
-    IERC20 private immutable rewardToken;
+    IERC20 public immutable rewardToken;
 
     /// @notice Info of each MCV2 user.
     /// `amount` LP token amount the user has provided.
@@ -41,7 +41,7 @@ contract ComplexRewarderTime is IRewarder,  BoringOwnable{
     /// @notice Info of each user that stakes LP tokens.
     mapping (uint256 => mapping (address => UserInfo)) public userInfo;
     /// @dev Total allocation points. Must be the sum of all allocation points in all pools.
-    uint256 totalAllocPoint;
+    uint256 public totalAllocPoint;
 
     uint256 public rewardPerSecond;
     uint256 private constant ACC_TOKEN_PRECISION = 1e12;
